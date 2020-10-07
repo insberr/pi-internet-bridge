@@ -4,6 +4,7 @@ I am making this because I ran into issues while following may other tutorials.
 Issues like `dnsmasq` failing to start on boot.  
 If you run into issues, feel free to submit an issue to this github repo  
 _This was last updated on October 7th, 2020_
+
 #### Why?
 I am using an old PC and it does not have a built in WiFi reciver so I use a wireless to ethernet bridge that plugs into the wall.  
 Since the plug has issues and constantally disconnects me from the internet, I wondered if it was possible to use my raspberry pi as the bridge.  
@@ -17,9 +18,9 @@ There are plenty of this (almost the same) tutorials everywhere (they almost see
 - A WiFI connection
 
 ### Step 1
-Connect your pi to the internet  
-ssh into your pi or connect its HDMI to a display  
-Update your raspberry pi
+Connect your pi to the internet and ssh into your pi or connect it to a display.  
+
+Next, update your raspberry pi
 ```
 sudo apt-get update
 sudo apt-get upgrade
@@ -132,3 +133,8 @@ It is reccommended that you reboot your Pi
 ```
 sudo reboot
 ```
+
+
+
+## Credits
+[Article used for the how to](https://pimylifeup.com/raspberry-pi-wifi-bridge/)
