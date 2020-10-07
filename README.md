@@ -1,3 +1,6 @@
+<style>
+  body { background-color: black; color: white; }
+</style>
 # pi-internet-bridge
 How to use your raspberry pi as a WIFI to ethernet bridge
 I am making this because I ran into issues while following may other tutorials.  
