@@ -3,14 +3,14 @@ How to use your raspberry pi as a WIFI to ethernet bridge
 I am making this because I ran into issues while following may other tutorials.  
 Issues like `dnsmasq` failing to start on boot.  
 If you run into issues, feel free to submit an issue to this github repo  
-_This was last updated on October 7th, 2020_
+_This was last updated on November 29th, 2020_
 
 #### Why?
 I am using an old PC and it does not have a built in WiFi reciver so I use a wireless to ethernet bridge that plugs into the wall.  
 Since the plug has issues and constantally disconnects me from the internet, I wondered if it was possible to use my raspberry pi as the bridge.  
 It works perfectly and so far has not disconnected my PC from the internet. Finally, I can play on that Minecraft server without being disconnected every 15 minutes.
 
-There are plenty of this (almost the same) tutorials everywhere (they almost seem like copies..) and following them I ran into issues. I decided, "Why not rewrite it, but with what actually works, so no one has to spend a sleepless night trying to fix errors when all they wanted to do was play some multiplay Minecraft."
+There are plenty of these (almost the same) tutorials everywhere (they almost seem like copies..) and following them I ran into issues. I decided, "Why not rewrite it, but with what actually works, so no one has to spend a sleepless night trying to fix errors when all they wanted to do was play some multiplayer Minecraft."
 
 ## What you'll need
 - Raspberry pi 4B (What I used for this, but any rpi with a wifi and ethernet connection will do)
@@ -65,13 +65,13 @@ sudo nano /etc/dnsmasq.conf
 
 And type the following
 ```
-interface=eth0       # Use interface eth0  
+interface=eth0    # Use interface eth0  
 listen-address=192.168.220.1   # Specify the address to listen on
 bind-dynamic      # Bind to the interface
-server=8.8.8.8       # Use Google DNS
-domain-needed        # Don't forward short names
-bogus-priv           # Drop the non-routed address spaces.
-dhcp-range=192.168.220.50,192.168.220.150,12h # IP range and lease time
+server=8.8.8.8    # Use Google DNS
+domain-needed     # Don't forward short names
+bogus-priv        # Drop the non-routed address spaces.
+dhcp-range=192.168.220.50,192.168.220.150,12h   # IP range and lease time
 ```
 Save and exit the editor.  
 This is where I ran into issues. All the tutorials I found use `bind-interfaces`, which after some research, I found that it was making dnsmasq start the connection before it was ready. To fix the problem, I replaced `bind-interfaces` with `bind-dynamic`.
