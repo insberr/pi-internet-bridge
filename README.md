@@ -3,7 +3,7 @@ How to use your raspberry pi as a WIFI to ethernet bridge
 I am making this because I ran into issues while following may other tutorials.  
 Issues like `dnsmasq` failing to start on boot.  
 If you run into issues, feel free to submit an issue to this github repo  
-_This was last updated on November 29th, 2020_
+_This was last updated on December 31, 2022._
 
 #### Why?
 I am using an old PC and it does not have a built in WiFi reciver so I use a wireless to ethernet bridge that plugs into the wall.  
@@ -43,6 +43,10 @@ In this file add
 interface eth0
 static ip_address=192.168.220.1/24
 static routers=192.168.220.0
+metric 300
+
+interface wlan0
+metric 200
 ```
 Save the changes (CTRL + O, then CTRL + X)
 
