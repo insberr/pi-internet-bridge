@@ -31,6 +31,7 @@ Install `dnsmasq`
 ```
 sudo apt-get install dnsmasq
 ```
+Note: This tutorial assumes the `dhcpd` and `iptables` commands work and the libraries are installed for them.
 
 ### Step 3
 Configure the ethernet connection  
